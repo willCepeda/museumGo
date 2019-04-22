@@ -1,0 +1,7 @@
+SELECT DISTINCT ?pinturas ?pinturasLabel ?museo ?museoLabel  WHERE {
+  ?pinturas wdt:P170 wd:Q5432.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+  OPTIONAL { ?pinturas wdt:P276 ?museo. }
+  OPTIONAL { ?pinturas wdt:P237 ?escudo_de_armas. }
+}
+LIMIT 100

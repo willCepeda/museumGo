@@ -1,0 +1,10 @@
+SELECT DISTINCT ?item ?nombre ?imagen ?fecha_cre WHERE {
+  ?item wdt:P31 wd:Q207694.
+  ?item wdt:P131* wd:Q2807.
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".
+    ?item rdfs:label ?nombre.
+  }
+  OPTIONAL { ?item wdt:P18 ?imagen. }
+  OPTIONAL { ?item wdt:P571 ?fecha_cre. }
+}

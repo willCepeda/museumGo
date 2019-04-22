@@ -1,0 +1,9 @@
+SELECT ?museo_de_arte ?museo_de_arteLabel ?obra_destacada ?obra_destacadaLabel WHERE {
+  ?museo_de_arte wdt:P31 wd:Q17431399.
+ 
+  ?museo_de_arte wdt:P17 wd:Q29.
+  ?museo_de_arte wdt:P31 wd:Q207694.
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+}
+LIMIT 100

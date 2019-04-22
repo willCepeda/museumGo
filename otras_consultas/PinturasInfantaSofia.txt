@@ -1,0 +1,8 @@
+SELECT ?name ?image ?inception ?Museo_Nacional_Centro_de_Arte_Reina_Sof_a WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  
+  ?Museo_Nacional_Centro_de_Arte_Reina_Sof_a wdt:P276 wd:Q460889.
+  OPTIONAL {  }
+}
+LIMIT 25

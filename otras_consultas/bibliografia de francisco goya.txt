@@ -1,0 +1,6 @@
+SELECT DISTINCT ?pinturas ?autor ?autorLabel ?movimiento ?movimientoLabel WHERE {
+  ?pinturas wdt:P50 wd:Q5432.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+  OPTIONAL { ?pinturas wdt:P50 ?autor. }
+  OPTIONAL { ?autor wdt:P135 ?movimiento }
+}

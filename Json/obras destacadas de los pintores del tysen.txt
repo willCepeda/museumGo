@@ -1,0 +1,10 @@
+SELECT DISTINCT ?ser_humano ?creador ?creadorLabel ?movimiento ?movimientoLabel ?obra_destacada ?obra_destacadaLabel WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  ?ser_humano wdt:P195 wd:Q176251.
+  ?ser_humano wdt:P170 ?creador.
+  ?creador wdt:P135 ?movimiento.
+   ?ser_humano rdfs:label ?nombre.
+  FILTER((LANG(?nombre)) = "es").
+  OPTIONAL { ?creador wdt:P800 ?obra_destacada. }
+}
+LIMIT 100

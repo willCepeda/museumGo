@@ -1,0 +1,7 @@
+SELECT DISTINCT ?item ?creador ?imagen WHERE {
+  ?item wdt:P195 wd:Q160112.
+  ?item wdt:P31 wd:Q3305213.
+  ?item wdt:P180 wd:Q3305213.
+  OPTIONAL { ?item wdt:P170 ?creador. }
+  OPTIONAL { ?item wdt:P18 ?imagen. }
+} LIMIT 10
