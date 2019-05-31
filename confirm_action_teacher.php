@@ -31,7 +31,7 @@ if(!empty($_POST)){
 	
 		
 		$result = $conexion->query($sql);
-		$msg_confirm ="Se han actualizado los datos correctamente! ".$sql;
+		$msg_confirm ="Se han actualizado los datos correctamente! ";
 	}else if($_POST['boton']=="Eliminar Perfil"){
 		
 		$sql.="DELETE from profesor where id ='".$_SESSION['id']."'";
@@ -93,7 +93,7 @@ if(!empty($_POST)){
 										</ul>
 										
 									</li>
-									
+									<li>
 									<a href="#">Actividad</a>
 										<ul>
 											<li><a href="create_act.php">Crear Actividad</a></li>

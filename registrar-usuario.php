@@ -4,6 +4,7 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+
 $table_name ="";
 $sql =" INSERT INTO ";
 ?>
@@ -67,7 +68,7 @@ $sql =" INSERT INTO ";
 				<section id="main" class="container medium">
 					<header>
 					<?php
-						$conexion = new mysqli($host_db, $user_db,"", $db_name);
+						$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 						
 						if($conexion->connect_error){
 							die("La conexion falló: ".$conexion->connect_error);
@@ -113,7 +114,7 @@ $sql =" INSERT INTO ";
 								
 								<?php
 									
-									echo "<input type='text' name='name' id='name' value='".$from_name."' placeholder='Nombre' />";
+									echo "<input type='text' name='name' id='name' value='".$from_name."' placeholder='Nombres' />";
 								
 								?>
 								</div>

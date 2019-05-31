@@ -14,15 +14,7 @@ if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
 	}
 $sql ="";	
 $msg_teacher="";	
-	/*$row_name =$row['nombre'];
-	$row_last_name = $row['apellidos'];
-	$oneName = explode(" ",$row_name);
-	$_SESSION['firt_name'] = $oneName[0];
-	$_SESSION['second_name'] = $oneName[1];
-	$oneLastName = explode(" ",$row_last_name);
-	$_SESSION['f_last_name']=$oneLastName[0];
-	$_SESSION['s_last_name']=$oneLastName[1];
-	 */
+	
 	 
 	 if(!empty($_GET)){
 		 if(!empty($_GET['id'])){
@@ -31,8 +23,7 @@ $msg_teacher="";
 		$result = $conexion->query($sql);
 		
 		$msg_teacher = "Se ha activado a un nuevo profesor.";		
-		//$count = mysql_affected_rows($conexion);
-		//if($count == 1);
+		
 		 }else if(!empty($_GET['activate'])){
 			 $rest = substr($_GET['activate'], 0, -2);
 			 $sql = "UPDATE profesor SET activo = '1' WHERE ".$rest.";";
@@ -80,9 +71,9 @@ $msg_teacher="";
 										<ul>
 										<?php
 											echo "<li><a href='modify_user.php?user=".$_SESSION['user']."'>Modificar</a></li>";
-											//<li><a href="modify_user.php?user="..">Modificar</a></li>
+											
 											echo "<li><a href='modify_User.php?user=".$_SESSION['user']."'>Eliminar</a></li>";
-											//<li><a href="#">Eliminar</a></li>
+											
 											
 										?>	
 										</ul>

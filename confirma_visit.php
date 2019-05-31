@@ -121,6 +121,7 @@ if(!empty($_SESSION['user'])){
 								
 									echo "<div class='col-12'>";
 									echo "<a href='print_pdf.php' target='_blank' class='button icon fa-download'>Descarga la Visita en PDF</a>";
+									echo "<a href='generate_pdf.php' target='_blank' class='button icon fa-download'>Descarga la Visita en PDF</a>";
 									echo "</div>";
 								?>
 								

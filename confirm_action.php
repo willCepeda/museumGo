@@ -4,18 +4,10 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
 session_start();
-//$_SESSION['user'] = $_GET['user'];
-//$_SESSION['pass'] = $_GET['pass'];
 
-/*$_SESSION['firt_name'];
-$_SESSION['second_name'];
-$_SESSION['last_name'];
-$_SESSION['second_last_n'];
-*/
-
-//echo "Hola ".$_SESSION['user'];
-$conexion = new mysqli($host_db, $user_db,"", $db_name);
+$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
@@ -117,7 +109,7 @@ if(!empty($_POST)){
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button">Cerrar Sessión</a></li>
+							<li><a href="#" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>

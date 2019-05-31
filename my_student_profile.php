@@ -4,11 +4,13 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
+
 session_start();
 
 
 if(!empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	$conexion->set_charset("utf8");
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
@@ -76,7 +78,7 @@ if(!empty($_SESSION['user'])){
 											
 											echo "<li><a href='modify_user.php'>Modificar</a></li>";
 											
-											echo "<li><a href='modify_User.php'>Eliminar</a></li>";
+											echo "<li><a href='modify_user.php'>Eliminar</a></li>";
 											
 											
 										?>	
@@ -105,7 +107,7 @@ if(!empty($_SESSION['user'])){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -126,11 +128,7 @@ if(!empty($_SESSION['user'])){
 									Esta aplicación trata de que los estudiantes puedan llevar a cabo sus visitas a los museos de la mejor forma posible.
 									
 									</p>
-									<!--
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									-->
+									
 									<hr />
 
 									<header>

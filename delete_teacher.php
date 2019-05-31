@@ -26,13 +26,7 @@ $msg_teacher="";
 		//if($count == 1);
 		 }
 		 
-		 /*else if(!empty($_GET['activate'])){
-			 $rest = substr($_GET['activate'], 0, -2);
-			 $sql = "UPDATE profesor SET activo = '1' WHERE ".$rest.";";
-			 $result = $conexion->query($sql);
-			 
-			 $msg_teacher = "Se ha activado todos los profesores.";	
-		 }*/
+		 
 	}
 	 
 }else{

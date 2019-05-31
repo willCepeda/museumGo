@@ -3,8 +3,12 @@
  //print "valor get: ".$_GET['coleccion'];
 if(!empty($_GET)){
 	
-	
-	$con = new mysqli("localhost","root","","museo");
+	$host_db = "localhost";
+	$user_db = "root";
+	$pass_db = "";
+	$db_name = "museo";
+	$tb_name = "profesor";
+	$con = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	$con->set_charset("utf8");
 	
 	if(!empty($_GET['pintor'])){

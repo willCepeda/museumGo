@@ -140,7 +140,7 @@ $msg_teacher="";
 													echo "<td><b>".$row["nom_acti"]."</b></td>";
 													echo "<td><b>".$row["tipo"]."</b></td>";
 													echo "<td align='center'>";
-													echo "<a href='cal_act_student.php?id=".$row["id_actividad"]."' >";
+													echo "<a href='cal_act_student.php?id=".$row["id_actividad"]."&id_h=".$row["id"]."' >";
 													echo "<input type=image  src='images/l.png'  width='25' height='25'>";
 													echo "</a>";
 													echo"</td>";

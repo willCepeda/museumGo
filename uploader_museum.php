@@ -13,18 +13,7 @@ if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
-	/*
-	$sql="SELECT * FROM administradores where usuario='".$_SESSION['user']."' and contrasenia='".$_SESSION['pass']."'";
-	$result = $conexion->query($sql);
-	$row = $result->fetch_assoc();
-	$row_name =$row['nombre'];
-	$row_last_name = $row['apellidos'];
-	$oneName = explode(" ",$row_name);
-	$_SESSION['firt_name'] = $oneName[0];
-	$_SESSION['second_name'] = $oneName[1];
-	$oneLastName = explode(" ",$row_last_name);
-	$_SESSION['f_last_name']=$oneLastName[0];
-	$_SESSION['s_last_name']=$oneLastName[1];*/
+
 	 
 }else{
 	

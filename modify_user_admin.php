@@ -4,10 +4,11 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
 session_start();
 
 if(!empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
@@ -109,7 +110,7 @@ if(!empty($_SESSION['user'])){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -177,31 +178,7 @@ if(!empty($_SESSION['user'])){
 												</div>
 											</div>
 											
-											<!--
-											<div class="col-4 col-12-narrower">
-												<input type="radio" id="priority-low" name="priority" checked>
-												<label for="priority-low">Low Priority</label>
-											</div>
-											<div class="col-4 col-12-narrower">
-												<input type="radio" id="priority-normal" name="priority">
-												<label for="priority-normal">Normal Priority</label>
-											</div>
-											<div class="col-4 col-12-narrower">
-												<input type="radio" id="priority-high" name="priority">
-												<label for="priority-high">High Priority</label>
-											</div>
-											<div class="col-6 col-12-narrower">
-												<input type="checkbox" id="copy" name="copy">
-												<label for="copy">Email me a copy of this message</label>
-											</div>
-											<div class="col-6 col-12-narrower">
-												<input type="checkbox" id="human" name="human" checked>
-												<label for="human">I am a human and not a robot</label>
-											</div>
-											<div class="col-12">
-												<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-											-->
+											
 											<div class="col-12">
 												<ul class="actions">
 													<li><input type="submit" name="boton" id="actualiza" value="Actualizar Datos" /></li>
@@ -212,18 +189,7 @@ if(!empty($_SESSION['user'])){
 									</form>
 
 									<hr />
-									<!--
-									<form method="post" action="#">
-										<div class="row gtr-uniform gtr-50">
-											<div class="col-9 col-12-mobilep">
-												<input type="text" name="query" id="query" value="" placeholder="Query" />
-											</div>
-											<div class="col-3 col-12-mobilep">
-												<input type="submit" value="Search" class="fit" />
-											</div>
-										</div>
-									</form>
-									-->
+									
 								</section>
 
 						</div>

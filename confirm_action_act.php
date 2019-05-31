@@ -29,12 +29,12 @@ if(!empty($_POST)){
 		
 		$result = $conexion->query($sql);
 		$msg_confirm ="Se han actualizado los datos correctamente! ";
-	}else if($_POST['botonE']=="Eliminar Actividad"){
+	}else if($_POST['boton']=="Eliminar Actividad"){
 		
 		$sql.="DELETE FROM actividad_profesor where id_actividad='".$_POST['id']."'";
 		
 			$result = $conexion->query($sql);
-			$msg_confirm ="Se ha eliminado la visita correctamente! ";
+			$msg_confirm ="Se ha eliminado la actividad correctamente! ";
 	}
 	
 }else{

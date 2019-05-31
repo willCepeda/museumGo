@@ -4,10 +4,11 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
 session_start();
 
 if(!empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
@@ -101,7 +102,7 @@ if(!empty($_SESSION['user'])){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>

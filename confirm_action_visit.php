@@ -4,9 +4,10 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
 session_start();
 
-$conexion = new mysqli($host_db, $user_db,"", $db_name);
+$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	$conexion->set_charset("utf8");
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
@@ -29,7 +30,7 @@ if(!empty($_POST)){
 		
 		$result = $conexion->query($sql);
 		$msg_confirm ="Se han actualizado los datos correctamente! ";
-	}else if($_POST['botonE']=="Eliminar Vista"){
+	}else if($_POST['boton']=="Eliminar Visita"){
 		
 		$sql.="DELETE FROM visitas_profesor where id_visita='".$_POST['id']."'";
 		
@@ -109,7 +110,7 @@ if(!empty($_POST)){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>

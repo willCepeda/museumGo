@@ -74,9 +74,10 @@ if(!empty($_POST)){
 									<li>
 									<a href="#">Visitas</a>
 										<ul>
-											<li><a href="visit_available.php">Disponibles</a></li>
-											<li><a href="my_visit.php">Mis Visitas</a></li>
-											
+											<li><a href="create_visit.php">Crear Visitas</a></li>
+											<li><a href="pub_visit.php">Publicadas</a></li>
+											<li><a href="nopub_visit.php">NO Publicadas</a></li>
+											<li><a href="delete_visit.php">Eliminar Visitas</a></li>
 										</ul>
 										
 									</li>
@@ -84,11 +85,13 @@ if(!empty($_POST)){
 									<li><a href="elements.html">Elements</a></li>
 									-->
 									<li>
-									<a href="#">Actividades</a>
+									<a href="#">Actividad</a>
 										<ul>
-											<li><a href="act_available.php">Disponibles</a></li>
-											<li><a href="my_act.php">Mis Actividades</a></li>
-											<li><a href="my_act_cal.php">Calificaciones</a></li>
+											<li><a href="create_act.php">Crear Actividad</a></li>
+											<li><a href="pub_act.php">Publicadas</a></li>
+											<li><a href="nopub_act.php">NO Publicadas</a></li>
+											<li><a href="delete_act.php">Eliminar Actividad</a></li>
+											<li><a href="cal_act.php">Calificar Actividad</a></li>
 										</ul>
 										
 									</li>

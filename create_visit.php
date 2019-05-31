@@ -559,14 +559,17 @@ if(!empty($_SESSION['user'])){
 											<p>Deseas realizar la operacion de:</p>
 											</header>
 											<div class="col-4 col-12-narrower">
-												<input type="radio" id="priority-normal" value="0" name="publicado" checked>
-												<label for="priority-normal">No publicar</label>
+												<input type="radio" id="priority-low" value="0" name="publicado" checked>
+												<label for="priority-low">No publicar</label>
 											</div>
 											<div class="col-4 col-12-narrower">
 												<input type="radio" id="priority-normal" value="1" name="publicado">
 												<label for="priority-normal">Publicar</label>
 											</div>
-											<hr />
+											<div class="col-12">
+											<hr/>
+											</div>
+											
 											<input type="hidden" id="el_museo" name="rsEmuseo" value="">
 											<input type="hidden" id="pintores_museo" name="rsPintores" value="">
 											<input type="hidden" id="obras_museo" name="rsMuseo" value="">
@@ -583,7 +586,7 @@ if(!empty($_SESSION['user'])){
 										
 									</form>
 
-									<hr />
+								
 
 								</section>
 

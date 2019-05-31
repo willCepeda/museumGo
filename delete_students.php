@@ -4,11 +4,12 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+
 $tb_name = "estudiantes";
 session_start();
 
 if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
@@ -65,10 +66,9 @@ $msg_students="";
 										<a href="#">Perfil</a>
 										<ul>
 										<?php
-											echo "<li><a href='modify_user.php?user=".$_SESSION['user']."'>Modificar</a></li>";
-											//<li><a href="modify_user.php?user="..">Modificar</a></li>
-											echo "<li><a href='modify_User.php?user=".$_SESSION['user']."'>Eliminar</a></li>";
-											//<li><a href="#">Eliminar</a></li>
+											echo "<li><a href='modify_user_admin.php'>Modificar</a></li>";
+											
+											echo "<li><a href='modify_user_admin.php'>Eliminar</a></li>";
 											
 										?>	
 										</ul>
@@ -92,9 +92,27 @@ $msg_students="";
 									<!--<li><a href="contact.html">Contact</a></li>
 									<li><a href="elements.html">Elements</a></li>
 									-->
+									<li>
+									<a href="#">Modificar</a>
+										<ul>
+											<li><a href="modifyAdmin_teacher.php">Perfil. Profesor</a></li>
+											<li><a href="modifyAdmin_students.php">Perfil. Estudiantes</a></li>
+										</ul>
+										
+									</li>
+								
+									<li>
+									<a href="#">ActualizarBD</a>
+										<ul>
+											<li><a href="updateAdmin_museum.php">Añadir Museos</a></li>
+											<li><a href="updateAdmin_obras.php">Añadir Obras</a></li>
+											<li><a href="updateAdmin_pintores.php">Actualizar Pintores</a></li>
+										</ul>
+										
+									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>

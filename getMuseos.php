@@ -1,7 +1,12 @@
 <?php
 //getting data from database
 if(!empty($_GET)){
-	$conn = mysqli_connect("localhost","root","","museo");
+	$host_db = "localhost";
+	$user_db = "root";
+	$pass_db = "";
+	$db_name = "museo";
+	$tb_name = "profesor";
+	$conn = mysqli_connect($host_db, $user_db,$pass_db, $db_name);
 	if(!empty($_GET['museo'])){
 		
 		//getting data from employe table
@@ -20,20 +25,7 @@ if(!empty($_GET)){
 		//returning response in JSON format
 		echo json_encode($data);
 		
-	}/*else{
-		$query ="select p.codigo_pintor,p.nombre,p.imagen,p.genero from museo_cn_pintor m, pintores p where m.codigo_museo='' and m.codigo_pintor =p.codigo_pintor ";
-		$result = mysqli_query($conn,$query);
-
-		//storing in array
-		$data =array();
-		while($row = mysqli_fetch_assoc($result)){
-			
-			$data[] = $row;
-
-		}
-		
-		echo json_encode($data);
-	}*/
+	}
 	mysqli_close($conn);
 }
 

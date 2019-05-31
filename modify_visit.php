@@ -37,7 +37,7 @@ function getEstado($vis_estado){
 	
 }
 if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	$conexion->set_charset("utf8");
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
@@ -125,7 +125,7 @@ if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -365,7 +365,7 @@ if(!empty($_SESSION['pass']) && !empty($_SESSION['user'])){
 											<hr>
 												<ul class="actions">
 													<li><input type="submit" name="boton" id="actualiza" value="Actualizar Datos" /></li>
-													<li><input type="submit" name="boton" id="elimina" value="Eliminar Vista" class="alt" /></li>
+													<li><input type="submit" name="boton" id="eliminar" value="Eliminar Visita" class="alt" /></li>
 												</ul>
 											</div>
 										</div>

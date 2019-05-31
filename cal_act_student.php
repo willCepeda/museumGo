@@ -1,37 +1,49 @@
-<!DOCTYPE HTML>
+
 <?php
 $host_db = "localhost";
 $user_db = "root";
 $pass_db = "";
 $db_name = "museo";
+$tb_name = "profesor";
 session_start();
 
 
 if(!empty($_SESSION['user'])){
-	$conexion = new mysqli($host_db, $user_db,"", $db_name);
+	$conexion = new mysqli($host_db, $user_db,$pass_db, $db_name);
 	$conexion->set_charset("utf8");
 	if($conexion->connect_error){
 		die("La conexion falló: ".$conexion->connect_error);
 	}
 	
 	 if(!empty($_GET)){
-		 //$query="select * from  actividad_profesor v where v.id_actividad='".$_GET['id']."'";
-		  //
+		 
+		  $query ="select a.nom_acti, a.imagenes, a.pregunta,a.respuesta ,h.respuesta_estudiante,h.id,h.nota,h.observacion from hacer_actividad h, actividad_profesor a where h.id_actividad = a.id_actividad and h.id_estudiantes = '".$_SESSION['id']."' and a.id_actividad='".$_GET['id']."' and h.id='".$_GET['id_h']."'";
+		 
+
+		 $result = $conexion->query($query);
+		  $row = $result->fetch_assoc();
+		  
+
 		  $query ="select a.nom_acti, a.imagenes, a.pregunta,a.respuesta ,h.respuesta_estudiante,h.id,h.nota from hacer_actividad h, actividad_profesor a where h.id_actividad = a.id_actividad and h.id_estudiantes = '".$_SESSION['id']."' and a.id_actividad='".$_GET['id']."' ";
 		 
 		echo $query;
 		 $result = $conexion->query($query);
 		  $row = $result->fetch_assoc();
 		  $act_id =$row['id_actividad'];
-		  //$act_prof =$row['codigo_profesor'];
+		  
 		  $act_nombre =comprueba($row['nom_acti']);
 		 
 		  $act_obra=comprueba($row['imagenes']);
 		  $act_pregunta=comprueba($row['pregunta']);
 		  $act_res_es = comprueba($row['respuesta_estudiante']);
 		  $act_res=comprueba($row['respuesta']);
+
+		  $act_nota =$row['nota'];
+		  $act_obser=$row['observacion'];
+
 		  $act_nota =comprueba($row['nota']);
 		  
+
 	  }
 	
 }else{
@@ -123,7 +135,7 @@ function comprueba($valor){
 									</li>
 								</ul>
 							</li>
-							<li><a href="index_user.php" class="button">Cerrar Sessión</a></li>
+							<li><a href="index_user.php" class="button">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -245,8 +257,23 @@ function comprueba($valor){
 											<?php
 												echo "<header>";
 												
+<<<<<<< HEAD
+												echo "<h2 aling='center' >NOTA :&nbsp;<b><em>". $act_nota."</em></b></h2>";
+												
+												
+												
+												echo "</header>";
+												
+												
+												echo "<header>";
+												echo "<p>Observaciones: <b><em>".$act_obser."</em></b></p>";
+												
+												echo "</header>";
+												
+=======
 												echo "<h2 aling='center' >NOTA :&nbsp;<b><em>".$act_nota."</em></b></h2>";
 												echo "</header>";
+>>>>>>> 996b8409314107814526f38a6d3bbefdd30225c7
 												?>
 											
 											</div>
